@@ -127,7 +127,7 @@ print(f'Accuracy: {correct / (correct + incorrect)}');
 # Pruning
 ###########################################
 
-# Sort sensitivites
+# Sort weights
 considered_layers = filter(lambda x : re.search("^conv", x), net._modules.keys())
 weights_as_list = []
 layer_names = [layerName for layerName in considered_layers];
