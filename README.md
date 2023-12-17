@@ -1,17 +1,17 @@
-*Pruning Project*
+##Pruning Project##
 ***
 
 **Overall Goal**
 
-The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the 10\% most "sensitive" weights of the first layer of the network, and (3) evaluate the performance of the pruned network.
+The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom 0$^{th}$ percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
 
-Exploring the use of this proposed "sensitivity" metric on this concrete example problem will illuminate whether it can be useful for other, more complex image recognition problems that require larger neural networks.
+Exploring the use of weight magnitude as a pruning metric on this concrete example problem will illuminate whether it can be useful for other, more complex image recognition problems that require larger neural networks.
 
 ***
 
 **Motivation**
 
-This project was motivated by a desire to become more familiar with PyTorch. While I had seen PyTorch code before, I had never written substantive original code with PyTorch and thus only had a tenuous grasp of how machine learning implementations are created with it.
+This project was motivated by a desire to become more familiar with PyTorch. While I had seen PyTorch code before, I had not written substantive original code with PyTorch and thus only had a tenuous grasp of how machine learning implementations are created with it.
 
 ***
 
@@ -50,3 +50,8 @@ To evaluate the usefulness of this metric, we must perform pruning with it on a 
 
 **Results**
 
+Before pruning, the accuracy on test data was 72.86%. After pruning, the accuracy on the test data was 71.31%.
+
+Thus, the tradeoff seen was a 1.55% decrease in accuracy for a 0.01% decrease in the number of saved weights.
+
+Whether this tradeoff is a good one is out of the scope of this paper and likely requires knowledge in computer systems and hardware. Thus, it is a difficult question to evaluate with my current background.
