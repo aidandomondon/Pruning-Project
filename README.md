@@ -1,19 +1,14 @@
 # Pruning Project
-***
 
 ## Overall Goal
 
-The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom $0^{th}$ percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
+The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom 0<sup>th</sup> percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
 
 Exploring the use of weight magnitude as a pruning metric on this concrete example problem will illuminate whether it can be useful for other, more complex image recognition problems that require larger neural networks.
-
-***
 
 ## Motivation
 
 This project was motivated by a desire to become more familiar with PyTorch. While I had seen PyTorch code before, I had not written substantive original code with PyTorch and thus only had a tenuous grasp of how machine learning implementations are created with it.
-
-***
 
 ## Background
 
@@ -34,19 +29,15 @@ Since a result of a convolution operation on $D$ is a function of $D$, it is an 
 With many CNNs employing multiple different convolutions, and with each kernel spanning two dimensions, the storage requirements can blow up. Thus, it is a natural desire to want to reduce the number of parameters needed while maintaining the model's accuracy.
 
 
-We call the individual entries of each kernel in the model "weights". We consider the problem of choosing 0.01\% of the model's weights to set to 0. An informed way of doing so would be to choose based on some metric that identifies "unimportant" weights.
-
-***
+We call the individual entries of each kernel in the model "weights". We consider the problem of choosing 0.01% of the model's weights to set to 0. An informed way of doing so would be to choose based on some metric that identifies "unimportant" weights.
 
 ## Project Description
 
 In this project, we consider one such metric, rather simply, the magnitude of the weight.
 
-We prune (set to 0) the weights in the bottom 0.01\% of all weights in the model when ranked by magnitude, as these weights should be the 0.01\% least impactful.
+We prune (set to 0) the weights in the bottom 0.01% of all weights in the model when ranked by magnitude, as these weights should be the 0.01% least impactful.
 
-To evaluate the usefulness of this metric, we must perform pruning with it on a concrete example problem. We consider the problem of classifying images from the Fashion-MNIST dataset ([Xiao et al, 2017](https://arxiv.org/abs/1708.07747)). The Fashion-MNIST dataset is a set of 70,000 $28 \times 28$ images, each depicting one article of clothing that falls into one of 10 categories.
-
-***
+To evaluate the usefulness of this metric, we must perform pruning with it on a concrete example problem. We consider the problem of classifying images from the Fashion-MNIST dataset ([Xiao et al, 2017](https://arxiv.org/abs/1708.07747)). The Fashion-MNIST dataset is a set of 70,000 28 $\times$ 28 images, each depicting one article of clothing that falls into one of 10 categories.
 
 ## Results
 
