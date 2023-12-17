@@ -59,7 +59,7 @@ class Net(torch.nn.Module):
         self.linear3Activation = torch.nn.ReLU();
         self.linear4 = torch.nn.Linear(60, 10);
         self.linear4Activation = torch.nn.ReLU();
-        self.linear4Clip = torch.nn.Softmax();
+        self.linear4Clip = torch.nn.Softmax(1);
 
     def forward(self, X):
         X = self.conv1(X);
