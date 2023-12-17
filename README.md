@@ -2,7 +2,10 @@
 
 ## Overall Goal
 
-The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom 0.01<sup>th</sup> percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
+The goal is to 
+1. Train a convolutional neural network to classify images of articles of clothing.
+2. Calculate and prune the bottom 0.01<sup>th</sup> percentile of weights when ranked by magnitude.
+3. Evaluate the performance of the pruned network and compare to the unpruned network.
 
 Exploring the use of weight magnitude as a pruning metric on this concrete example problem will illuminate whether it can be useful for other, more complex image recognition problems that require larger neural networks.
 
