@@ -81,7 +81,7 @@ class Net(torch.nn.Module):
         X = self.linear4Clip(X);
         return X;
 
-
+# Load model if one is available, else train from scratch.
 if os.listdir(MODEL_SAVES_DIR) == []:
 
     net = Net();
@@ -127,7 +127,7 @@ print(f'Accuracy: {correct / (correct + incorrect)}');
 # Pruning
 ###########################################
 
-# Sort weights
+# Sort weights by magnitude
 considered_layers = filter(lambda x : re.search("^conv", x), net._modules.keys())
 weights_as_list = []
 layer_names = [layerName for layerName in considered_layers];
@@ -141,7 +141,7 @@ for l in range(len(layer_names)):
                 weights_as_list.append({'index' : (l, f, k, i, j), 'weight': kernel[i, j]});
 sorted_weights = sorted(weights_as_list, key=lambda item : item['weight']);
 
-# Prune bottom 0.01% of weights
+# Prune bottom 0.01% of weights when ranked by magnitude
 pruning_mass = sum([torch.numel(getattr(net, layer).weight) for layer in layer_names]) // 10000
 
 net.requires_grad_(False);
