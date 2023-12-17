@@ -2,7 +2,7 @@
 
 ## Overall Goal
 
-The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom 0<sup>th</sup> percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
+The goal is to (1) train a convolutional neural network to classify articles of clothing, (2) calculate and prune the bottom 0.01<sup>th</sup> percentile of weights when ranked by magnitude, and (3) evaluate the performance of the pruned network.
 
 Exploring the use of weight magnitude as a pruning metric on this concrete example problem will illuminate whether it can be useful for other, more complex image recognition problems that require larger neural networks.
 
@@ -14,7 +14,7 @@ This project was motivated by a desire to become more familiar with PyTorch. Whi
 
 ***Image Classification***
 
-Our definition of an image classification problem is as follows. Let there be a sample $X$ of images, each of dimension $d \times d$, with corresponding labels $y$. Partition $X$ into $X_{train}$ and $X_{test}$. Design a model that can, given $X_{train}$ and the labels corresponding to $X_{train}$'s images, $\{y_i \; | x_i \in X_{train}\}$, accurately predict the correct label $y_j$ of an image $x_j$ in $X_{test}$. 
+Our definition of an image classification problem is as follows. Let there be a sample $X$ of images, each of dimension $d \times d$, with corresponding labels $y$. Partition $X$ into $X_{train}$ and $X_{test}$. Design a model that can, given $X_{train}$ and the labels corresponding to $X_{train}$'s images, $\\{ y_i \; | x_i \in X_{train}\\}$, accurately predict the correct label $y_j$ of an image $x_j$ in $X_{test}$. 
 
 A commonly-employed solution for image classification problems are convolutional neural networks (CNNs)– a variant of neural networks that employ $\textit{convolutions}$ to meaningfully extract information from images into a numerical form.
 
