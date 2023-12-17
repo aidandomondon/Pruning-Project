@@ -14,7 +14,7 @@ This project was motivated by a desire to become more familiar with PyTorch. Whi
 
 ***Image Classification***
 
-Our definition of an image classification problem is as follows. Let there be a sample $X$ of images, each of dimension $d \times d$, with corresponding labels $y$. Partition $X$ into $X_{train}$ and $X_{test}$. Design a model that can, given $X_{train}$ and the labels corresponding to $X_{train}$'s images, $\\{ y_i \; | x_i \in X_{train}\\}$, accurately predict the correct label $y_j$ of an image $x_j$ in $X_{test}$. 
+Our definition of an image classification problem is as follows. Let there be a sample $X$ of images, each of dimension $d \times d$, with corresponding labels $y$. Partition $X$ into $X_{train}$ and $X_{test}$. Design a model that can, given $X_{train}$ and the labels corresponding to $X_{train}$'s images, $\\{ y_i \\; | x_i \in X_{train}\\}$, accurately predict the correct label $y_j$ of an image $x_j$ in $X_{test}$. 
 
 A commonly-employed solution for image classification problems are convolutional neural networks (CNNs)– a variant of neural networks that employ $\textit{convolutions}$ to meaningfully extract information from images into a numerical form.
 
@@ -22,7 +22,7 @@ A commonly-employed solution for image classification problems are convolutional
 
 Given a $d \times d$ image $D$, and a $k \times k$ kernel $K$ where $k \leq d$, convolving $D$ with $K$ produces the $(d - k + 1) \times (d - k + 1)$ matrix $D * K$, where $(D*K)_{ij}$ is defined as the element-wise product of the $k \times k$ submatrix $D[i:i+k, j:j+k]$ and $K$.
 
-Since a result of a convolution operation on $D$ is a function of $D$, it is an informative descriptor of $D$. Because of this, convolutional neural networks use convolutions of images to learn things about them. Further, since the result of a convolution operation on $D$ is also a function of $K$, each convolution of $D$ with a different $K$s captures something different about $D$. Thus, CNNs usually employ a multitude of convolutions so as to encapsulate many different properties of the images given to them.
+Since a result of a convolution operation on $D$ is a function of $D$, it is an informative descriptor of $D$. Because of this, convolutional neural networks use convolutions of images to learn things about them. Further, since the result of a convolution operation on $D$ is also a function of $K$, each convolution of $D$ with a different $K\text{s}$ captures something different about $D$. Thus, CNNs usually employ a multitude of convolutions so as to encapsulate many different properties of the images given to them.
 
 ***Pruning based on metrics***
 
